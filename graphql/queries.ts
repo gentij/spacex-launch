@@ -9,7 +9,6 @@ export const getLaunches = gql`
       links {
         flickr_images
       }
-      details
     }
   }
 `;

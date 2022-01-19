@@ -47,14 +47,10 @@ const Home = () => {
 
   return (
     <Box className="container" sx={{ flexGrow: 1 }}>
-      <Grid
-        container
-        spacing={{ xs: 2, md: 3 }}
-        columns={{ xs: 4, sm: 8, md: 12 }}
-      >
-        {launches.map((launch, index) => (
-          <Grid item xs={2} sm={4} md={4} key={index}>
-            <LaunchCard key={launch.id} launch={launch} />
+      <Grid container spacing={3}>
+        {launches.map((launch) => (
+          <Grid key={launch.id} item xs={12} sm={6} md={4}>
+            <LaunchCard launch={launch} />
           </Grid>
         ))}
       </Grid>
@@ -62,6 +58,7 @@ const Home = () => {
         onClick={() => handleFetchMore()}
         loading={fetchMoreLoading}
         variant="contained"
+        sx={{ my: 4 }}
       >
         Fetch More
       </LoadingButton>
