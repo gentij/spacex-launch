@@ -40,7 +40,7 @@ const Home = () => {
   if (error) {
     return (
       <Box>
-        <Alert severity="error">{error}</Alert>
+        <Alert severity="error">{error.message}</Alert>
       </Box>
     );
   }
