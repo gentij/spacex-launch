@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Button,
   Card,
@@ -6,7 +7,7 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
-import React from "react";
+import Link from "next/link";
 
 export interface LaunchesListItem {
   id: string;
@@ -23,6 +24,7 @@ type Props = {
 
 const LaunchCard: React.FC<Props> = ({ launch }) => {
   const {
+    id,
     mission_name,
     launch_date_local,
     links: { flickr_images },
@@ -54,7 +56,9 @@ const LaunchCard: React.FC<Props> = ({ launch }) => {
         </Typography>
       </CardContent>
       <CardActions sx={{ mt: "auto" }}>
-        <Button size="small">Learn More</Button>
+        <Link href={`/mission/${id}`}>
+          <Button size="small">Learn More</Button>
+        </Link>
       </CardActions>
     </Card>
   );

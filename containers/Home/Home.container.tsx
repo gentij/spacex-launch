@@ -5,8 +5,8 @@ import { CircularProgress } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 
 import { getLaunches } from "../../graphql/queries";
-import { LaunchCard } from "../../pages/components/LaunchCard";
-import { LaunchesListItem } from "../../pages/components/LaunchCard/LaunchCard";
+import { LaunchCard } from "../../components/LaunchCard";
+import { LaunchesListItem } from "../../components/LaunchCard/LaunchCard";
 
 const Home = () => {
   const [launches, setLaunches] = useState<LaunchesListItem[]>([]);

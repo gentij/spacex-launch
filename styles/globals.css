@@ -22,11 +22,3 @@ a {
   margin: 0 auto;
   padding: 0 20px;
 }
-
-.line-cramp {
-  -webkit-line-break: 2;
-  -webkit-box-orient: vertical;
-  overflow: horizontal;
-  text-overflow: ellipsis;
-  display: -webkit-box !important;
-}

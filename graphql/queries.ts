@@ -13,7 +13,7 @@ export const getLaunches = gql`
   }
 `;
 
-export const LaunchQuery = gql`
+export const getLaunch = gql`
   query Launch($id: ID!) {
     launch(id: $id) {
       details
