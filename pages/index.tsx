@@ -1,27 +1,9 @@
 import type { NextPage } from "next";
-import { experimentalStyled as styled } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
-import Grid from "@mui/material/Grid";
 
-import { LaunchCard } from "./components/LaunchCard";
+import { Home as HomeContainer } from "../containers/Home";
 
 const Home: NextPage = () => {
-  return (
-    <Box className="container" sx={{ flexGrow: 1 }}>
-      <Grid
-        container
-        spacing={{ xs: 2, md: 3 }}
-        columns={{ xs: 4, sm: 8, md: 12 }}
-      >
-        {Array.from(Array(6)).map((_, index) => (
-          <Grid item xs={2} sm={4} md={4} key={index}>
-            <LaunchCard />
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
-  );
+  return <HomeContainer />;
 };
 
 export default Home;

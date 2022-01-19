@@ -1,35 +1,51 @@
 import {
-  Box,
   Button,
   Card,
   CardActions,
   CardContent,
   CardMedia,
-  Grid,
   Typography,
 } from "@mui/material";
 import React from "react";
 
-const LaunchCard: React.FC = () => {
+export interface LaunchesListItem {
+  id: string;
+  mission_name: string;
+  launch_date_local: string;
+  details: string;
+  links: {
+    flickr_images: string[];
+  };
+}
+
+type Props = {
+  launch: LaunchesListItem;
+};
+
+const LaunchCard: React.FC<Props> = ({ launch }) => {
+  const {
+    mission_name,
+    launch_date_local,
+    details,
+    links: { flickr_images },
+  } = launch;
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         alt="green iguana"
         height="140"
-        image="https://m.media-amazon.com/images/I/512GhJTHMqL._SX355_.jpg"
+        image={flickr_images[0]}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Lizard
+          {mission_name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+          {details}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
         <Button size="small">Learn More</Button>
       </CardActions>
     </Card>
